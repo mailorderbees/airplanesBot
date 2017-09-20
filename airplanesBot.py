@@ -37,7 +37,7 @@ for string in a:
         plane = plane.replace("Canadair Regional Jet ", "")
         flight = flight.replace("Airlines ", "")
         
-        if(plane == " "):
+        if(len(plane) < 2):
             plane = "No Data"
         planes += str(i+1) + ": " + plane + "| "
         flights += str(i+1) + ": " + flight + "| "
