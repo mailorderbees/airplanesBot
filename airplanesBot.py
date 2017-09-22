@@ -1,10 +1,13 @@
 import wolframalpha, tweepy, time
 
+tokensListFile = open('tokens.txt', "r")
+tokens = tokensListFile.readlines()
 #tweepy setup block
-TWITTER_CONSUMER_KEY = 'secret'
-TWITTER_CONSUMER_SECRET = 'secret'
-TWITTER_ACCESS_KEY = 'secret'
-TWITTER_ACCESS_SECRET = 'secret'
+TWITTER_CONSUMER_KEY = tokens[0]
+TWITTER_CONSUMER_SECRET = tokens[1]
+TWITTER_ACCESS_KEY = tokens[2]
+TWITTER_ACCESS_SECRET = tokens[3]
+tokensListFile.close()
 
 auth = tweepy.OAuthHandler(TWITTER_CONSUMER_KEY, TWITTER_CONSUMER_SECRET)
 auth.set_access_token(TWITTER_ACCESS_KEY, TWITTER_ACCESS_SECRET)
@@ -24,7 +27,7 @@ result = next(res.results)
 
 a = ((next(result.subpods).plaintext).split("slant distance")[1]).split("\n")
 
-i = 0;
+i = 0
 planes = ""
 flights = ""
 a.pop(0)
