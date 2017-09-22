@@ -7,14 +7,15 @@ TWITTER_CONSUMER_KEY = tokens[0]
 TWITTER_CONSUMER_SECRET = tokens[1]
 TWITTER_ACCESS_KEY = tokens[2]
 TWITTER_ACCESS_SECRET = tokens[3]
-tokensListFile.close()
 
 auth = tweepy.OAuthHandler(TWITTER_CONSUMER_KEY, TWITTER_CONSUMER_SECRET)
 auth.set_access_token(TWITTER_ACCESS_KEY, TWITTER_ACCESS_SECRET)
 api = tweepy.API(auth)
 
 #wolframalpha setup
-WOLFRAMALPHA_ID = 'secret'
+WOLFRAMALPHA_ID = tokens[4]
+tokensListFile.close()
+
 
 client = wolframalpha.Client(WOLFRAMALPHA_ID)
 query = "flights overhead"
