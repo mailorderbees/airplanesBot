@@ -3,10 +3,10 @@ import wolframalpha, tweepy, time
 tokensListFile = open('tokens.txt', "r")
 tokens = tokensListFile.readlines()
 #tweepy setup block
-TWITTER_CONSUMER_KEY = tokens[0]
-TWITTER_CONSUMER_SECRET = tokens[1]
-TWITTER_ACCESS_KEY = tokens[2]
-TWITTER_ACCESS_SECRET = tokens[3]
+TWITTER_CONSUMER_KEY = tokens[0].rstrip()
+TWITTER_CONSUMER_SECRET = tokens[1].rstrip()
+TWITTER_ACCESS_KEY = tokens[2].rstrip()
+TWITTER_ACCESS_SECRET = tokens[3].rstrip()
 
 auth = tweepy.OAuthHandler(TWITTER_CONSUMER_KEY, TWITTER_CONSUMER_SECRET)
 auth.set_access_token(TWITTER_ACCESS_KEY, TWITTER_ACCESS_SECRET)
